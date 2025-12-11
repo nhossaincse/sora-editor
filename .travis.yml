@@ -15,7 +15,7 @@ before_install:
   - chmod +x gradlew
 
 script:
-  - ./gradlew assembleDebug
+  - ./gradlew assembleDebug 
 
 after_success:
   - ./gradlew publishAllPublicationsToMavenCentral
