@@ -1,0 +1,32 @@
+language: android
+
+jdk:
+  - oraclejdk8
+
+android:
+  components:
+    - tools
+    - build-tools-28.0.3
+    - android-28
+    - extra-android-m2repository
+    - extra-android-support
+
+before_install:
+  - chmod +x gradlew
+
+script:
+  - ./gradlew assembleDebug
+
+after_success:
+  - ./gradlew publishAllPublicationsToMavenCentral
+
+notifications:
+  email: false
+
+env:
+  global:
+    - secure: ********************
+    - secure: ********************
+    - secure: ********************
+    - secure: ********************
+    - secure: ********************
